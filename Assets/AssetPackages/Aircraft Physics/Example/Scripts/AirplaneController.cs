@@ -25,6 +25,7 @@ public class AirplaneController : MonoBehaviour
 
     float thrustPercent;
     bool brake = false;
+    public bool isPropeller;
 
     AircraftPhysics aircraftPhysics;
     Rotator propeller;
@@ -46,9 +47,15 @@ public class AirplaneController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             SetThrust(thrustPercent + thrustControlSensitivity);
-            aircraftPhysics.ThurstEffect.SetActive(true);
+            if(!isPropeller)
+            {
+                aircraftPhysics.ThurstEffect.SetActive(true);
+            }
         }
-        // propeller.speed = thrustPercent * 1500f;
+        if(isPropeller)
+        {
+            propeller.speed = thrustPercent * 1500f;
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
