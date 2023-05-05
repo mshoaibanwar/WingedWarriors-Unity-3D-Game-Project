@@ -25,6 +25,7 @@ public class AircraftPhysics : MonoBehaviour
     public AirplaneController apController;
 
     public GameObject ThurstEffect;
+    public bool isPropeller;
 
     public void SetThrustPercent(float percent)
     {
@@ -120,7 +121,10 @@ public class AircraftPhysics : MonoBehaviour
         float friction;
         if (isBraking)
         {
-            ThurstEffect.SetActive(false);
+            if(!isPropeller)
+            {
+                ThurstEffect.SetActive(false);
+            }
             friction = 0.1f;
             SetThrustPercent(0.2f);
             apController.SetThrust(0.2f);
