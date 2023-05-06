@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed;
+    public bool followTarget = false;
+    public GameObject target;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,14 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * Time.deltaTime * speed);
+        if(followTarget)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 6f);
+        }
+        else
+        {
+            transform.Translate(Vector3.up * Time.deltaTime * speed);
+        }
         StartCoroutine(DestroyAfter());
     }
     IEnumerator DestroyAfter()

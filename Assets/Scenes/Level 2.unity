@@ -7359,7 +7359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d56a76c00164f7a8fcf0549addbe8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfRays: 6
+  numberOfRays: 10
   angle: 360
   weaponSystem: {fileID: 545667441}
   rayRange: 3000
