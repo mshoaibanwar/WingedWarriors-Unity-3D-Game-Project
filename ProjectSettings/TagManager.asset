@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wing
+  - Enemy
+  - Sensor
   layers:
   - Default
   - TransparentFX
