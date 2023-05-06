@@ -6,9 +6,10 @@ public class WeaponSystem : MonoBehaviour
 {
     public GameObject MachineGun;
     public GameObject Bullet;
+    public GameObject missilePrefab;
     public GameObject[] missile;
-
     public GameObject target;
+    private GameObject missileCloned;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,33 +19,17 @@ public class WeaponSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.U))
-        {
-            target = null;
-            Debug.Log("Target Resetted!");
-        }
         if(Input.GetMouseButtonDown(0))
         {
             Instantiate(Bullet, MachineGun.transform.position + new Vector3(0, 0.2f, 1.6f), MachineGun.transform.rotation);
         }
         if(Input.GetMouseButtonDown(1))
         {
-            for(int i=0; i<missile.Length; i++)
+            missileCloned = Instantiate(missilePrefab, missile[(int)Random.RandomRange(0f, 2f)].transform.position, missile[0].transform.rotation);
+            if(target != null)
             {
-                if(missile[i] != null)
-                {
-                    if(missile[i].GetComponent<Missile>().fire != true)
-                    {
-                        if(target!= null)
-                        {
-                            missile[i].GetComponent<Missile>().target = target;
-                            missile[i].GetComponent<Missile>().followTarget = true;
-                        }
-                        missile[i].GetComponent<Missile>().fire = true;
-                        missile[i] = null;
-                        break;
-                    }
-                }
+                missileCloned.GetComponent<Missile>().target = target;
+                missileCloned.GetComponent<Missile>().followTarget = true;
             }
         }
     }
