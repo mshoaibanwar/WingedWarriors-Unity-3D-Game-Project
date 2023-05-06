@@ -601,6 +601,7 @@ GameObject:
   - component: {fileID: 196128537}
   - component: {fileID: 196128536}
   - component: {fileID: 196128535}
+  - component: {fileID: 196128538}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -687,6 +688,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196128533}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &196128538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196128533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a81f7d1d0508cf24c83ebfe3e6b63e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfRays: 10
+  angle: 360
+  weaponSystem: {fileID: 545667441}
+  rayRange: 3000
 --- !u!1001 &230765304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -927,6 +944,12 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &269768432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8340278837766123021, guid: 5b3174f07ca6a5f499070d213634947a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1223991462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &295179500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1743,6 +1766,7 @@ MonoBehaviour:
   missile:
   - {fileID: 974855531}
   - {fileID: 7238020018097305205}
+  target: {fileID: 0}
 --- !u!4 &545667442
 Transform:
   m_ObjectHideFlags: 0
@@ -2478,6 +2502,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: F86 Sabre
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657845588387325197, guid: 11b4f26ac4400472788f374a05e121dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817003331959519696, guid: 11b4f26ac4400472788f374a05e121dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11b4f26ac4400472788f374a05e121dc, type: 3}
@@ -3398,6 +3432,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1207174361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8340278837766123021, guid: 5b3174f07ca6a5f499070d213634947a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1553733308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1223717823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3454,6 +3494,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Airbase 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340278837766123021, guid: 5b3174f07ca6a5f499070d213634947a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8715960368191616183, guid: 5b3174f07ca6a5f499070d213634947a,
         type: 3}
@@ -3533,6 +3578,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1223991462}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1223991464
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269768432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6320.43, y: 1, z: 6671}
+  m_Center: {x: 575.7, y: 31.69, z: 1240}
 --- !u!1001 &1260716826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4059,6 +4117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Airbase
       objectReference: {fileID: 0}
+    - target: {fileID: 8340278837766123021, guid: 5b3174f07ca6a5f499070d213634947a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8715960368191616183, guid: 5b3174f07ca6a5f499070d213634947a,
         type: 3}
       propertyPath: m_RootOrder
@@ -4137,6 +4200,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1553733308}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1553733310
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207174361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6295, y: 3.52, z: 6653.7}
+  m_Center: {x: 560, y: 31.9, z: 1247}
 --- !u!1001 &1560076358
 PrefabInstance:
   m_ObjectHideFlags: 0
