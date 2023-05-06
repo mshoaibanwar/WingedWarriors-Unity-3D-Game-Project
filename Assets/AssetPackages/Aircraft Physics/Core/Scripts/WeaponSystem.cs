@@ -18,7 +18,8 @@ public class WeaponSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        missile[0] = GameObject.FindGameObjectWithTag("Player").GetComponent<AirplaneController>().Missiles[0];
+        missile[1] = GameObject.FindGameObjectWithTag("Player").GetComponent<AirplaneController>().Missiles[1];
     }
 
     // Update is called once per frame

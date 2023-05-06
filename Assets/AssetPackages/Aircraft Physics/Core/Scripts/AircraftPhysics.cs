@@ -28,6 +28,7 @@ public class AircraftPhysics : MonoBehaviour
     public bool isPropeller;
 
     public AudioSource PlaneAudio;
+    public AudioClip planeaudioclip;
 
     public void SetThrustPercent(float percent)
     {
@@ -60,6 +61,7 @@ public class AircraftPhysics : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        PlaneAudio.clip = planeaudioclip;
     }
 
     private void FixedUpdate()

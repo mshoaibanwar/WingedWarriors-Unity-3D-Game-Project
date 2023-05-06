@@ -17,6 +17,8 @@ public class AirplaneController : MonoBehaviour
     [SerializeField]
     float flapControlSensitivity = 0.15f;
 
+    public GameObject[] Missiles;
+
 
     float pitch;
     float yaw;
