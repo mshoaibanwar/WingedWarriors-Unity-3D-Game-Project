@@ -19,6 +19,12 @@ public class WeaponSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.U))
+        {
+            target = null;
+            Debug.Log("Target Reset");
+        }
+
         if(Input.GetMouseButtonDown(0))
         {
             Instantiate(Bullet, MachineGun.transform.position + new Vector3(0, 0.2f, 1.6f), MachineGun.transform.rotation);
