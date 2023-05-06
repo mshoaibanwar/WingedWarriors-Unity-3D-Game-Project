@@ -42,7 +42,7 @@ public class Missile : MonoBehaviour
 
         if(followTarget)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 10f);
         }
     }
 
