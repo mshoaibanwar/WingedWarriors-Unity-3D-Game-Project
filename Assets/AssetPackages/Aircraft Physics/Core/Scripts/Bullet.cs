@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     public float speed;
     public bool followTarget = false;
     public GameObject target;
+    public GameObject bulletEffect;
+    public GameObject effectClone;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +32,15 @@ public class Bullet : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
+        if(effectClone!=null)
+        {
+            Destroy(effectClone);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        effectClone = Instantiate(bulletEffect, transform.position, Quaternion.identity);
+        Debug.Log("Bullet Collided!");
     }
 }

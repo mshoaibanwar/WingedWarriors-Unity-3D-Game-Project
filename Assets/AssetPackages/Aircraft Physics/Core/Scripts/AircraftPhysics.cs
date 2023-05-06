@@ -27,6 +27,8 @@ public class AircraftPhysics : MonoBehaviour
     public GameObject ThurstEffect;
     public bool isPropeller;
 
+    public AudioSource PlaneAudio;
+
     public void SetThrustPercent(float percent)
     {
         thrustPercent = percent;
@@ -121,6 +123,7 @@ public class AircraftPhysics : MonoBehaviour
         float friction;
         if (isBraking)
         {
+             PlaneAudio.Pause();
             if(!isPropeller)
             {
                 ThurstEffect.SetActive(false);

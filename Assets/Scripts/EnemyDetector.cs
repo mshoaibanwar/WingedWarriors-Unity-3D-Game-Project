@@ -9,8 +9,10 @@ public class EnemyDetector : MonoBehaviour
     public WeaponSystem weaponSystem;
 
     Quaternion rotation;
-
     public float rayRange = 2000f;
+
+    public bool targetLocked = false;
+    public AudioClip TargetLcokedAudio;
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,6 +36,11 @@ public class EnemyDetector : MonoBehaviour
             {
                 if (hitInfo.transform.gameObject.tag == "Enemy")
                 {
+                    if(!targetLocked)
+                    {
+                        GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>().PlayOneShot(TargetLcokedAudio);
+                        targetLocked = true;
+                    }
                     weaponSystem.target = hitInfo.transform.gameObject;
                     Debug.Log("Target Updated!");
                     break;

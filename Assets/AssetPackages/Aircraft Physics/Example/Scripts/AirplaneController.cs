@@ -47,6 +47,7 @@ public class AirplaneController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             SetThrust(thrustPercent + thrustControlSensitivity);
+            aircraftPhysics.PlaneAudio.Play();
             if(!isPropeller)
             {
                 aircraftPhysics.ThurstEffect.SetActive(true);
