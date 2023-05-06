@@ -601,6 +601,7 @@ GameObject:
   - component: {fileID: 196128537}
   - component: {fileID: 196128536}
   - component: {fileID: 196128535}
+  - component: {fileID: 196128538}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -687,6 +688,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196128533}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &196128538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196128533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d56a76c00164f7a8fcf0549addbe8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfRays: 10
+  angle: 360
+  weaponSystem: {fileID: 545667441}
+  rayRange: 300
 --- !u!1001 &230765304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1738,11 +1755,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MachineGun: {fileID: 196128533}
   Bullet: {fileID: 4439986354692015634, guid: e7cbb7445bd004c47bf8d6779eb02a32, type: 3}
-  missilePrefab: {fileID: 7238020017966378541, guid: 860ba8a9e10db40e39c9bf74bbc6ea6f,
-    type: 3}
+  missilePrefab: {fileID: 0}
   missile:
   - {fileID: 974855531}
   - {fileID: 7238020018097305205}
+  target: {fileID: 0}
 --- !u!4 &545667442
 Transform:
   m_ObjectHideFlags: 0
@@ -3455,6 +3472,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Airbase 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8340278837766123021, guid: 5b3174f07ca6a5f499070d213634947a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8715960368191616183, guid: 5b3174f07ca6a5f499070d213634947a,
         type: 3}
       propertyPath: m_RootOrder
@@ -4058,6 +4080,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Airbase
+      objectReference: {fileID: 0}
+    - target: {fileID: 8340278837766123021, guid: 5b3174f07ca6a5f499070d213634947a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8715960368191616183, guid: 5b3174f07ca6a5f499070d213634947a,
         type: 3}
